@@ -50,10 +50,10 @@ export default {
   methods: {
     boton() {
       this.enviar = true;
-      this.$v.touch
+      // this.$v.touch
       if (this.$v.$invalid) {
-        return false;
-      }
+        return console.error("complete los campos requiridos");
+}
       alert("validacion pasada");
     },
   },
@@ -63,5 +63,8 @@ export default {
 <style>
 .color{
   color: red;
+}
+input{
+  width: 40%;
 }
 </style>
