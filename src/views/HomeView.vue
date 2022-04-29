@@ -9,8 +9,8 @@
         id="exampleInputEmail1"
         aria-describedby="emailHelp"
       />
-      <div v-if=" enviar && !$v.user.text.required">campo requirido</div>
-      <div v-if=" enviar && !$v.user.text.minLength">debes tener al menos 2 caracteres</div>
+      <div class="color" v-if=" enviar && !$v.user.text.required">campo requirido</div>
+      <div class="color" v-if=" enviar && !$v.user.text.minLength">debes tener al menos 2 caracteres</div>
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -20,8 +20,8 @@
         class="form-control"
         id="exampleInputPassword1"
       />
-      <div v-if=" enviar && !$v.user.password.required">campo requirido</div>
-      <div v-if=" enviar && !$v.user.password.minLength">debes tener mas de 6 caracteres
+      <div class="color" v-if=" enviar && !$v.user.password.required">campo requirido</div>
+      <div class="color" v-if=" enviar && !$v.user.password.minLength">debes tener mas de 6 caracteres
 
       </div>
     </div>
@@ -61,4 +61,7 @@ export default {
 </script>
 
 <style>
+.color{
+  color: red;
+}
 </style>
