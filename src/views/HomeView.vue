@@ -54,8 +54,8 @@ export default {
       if (this.$v.$invalid) {
         return console.error("complete los campos requiridos");
 }
-      alert("validacion pasada");
-    },
+  this.$router.push('/about')
+},
   },
 };
 </script>
