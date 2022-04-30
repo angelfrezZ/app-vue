@@ -1,7 +1,7 @@
 <template>
-  <h2>
-      bienvenido
-  </h2>
+<h1>
+    bienvenido
+</h1>
 </template>
 
 <script>
