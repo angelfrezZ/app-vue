@@ -1,73 +1,4 @@
-<template>
-  <div>
-    <form @submit.prevent="boton" class="seccion">
-      <h4>Registrarse</h4>
-      <input
-        v-model="users.nombre"
-        class="control"
-        type="text"
-        name="nombre"
-        id="nombre"
-        placeholder="Nombre"
-      />
-      <div class="color" v-if="enviar && !$v.users.nombre.required">
-        Campo requirido
-      </div>
-      <input
-        v-model="users.apellido"
-        class="control"
-        type="text"
-        name="apellido"
-        id="apellido"
-        placeholder="Apellido"
-      />
-      <div class="color" v-if="enviar && !$v.users.apellido.required">
-        Campo requirido
-      </div>
-      <input
-        v-model="users.email"
-        class="control"
-        type="email"
-        name="email"
-        id="email"
-        placeholder="Email"
-      />
-      <div class="color" v-if="enviar && !$v.users.email.required">
-        Campo requirido
-      </div>
-      <input
-        v-model="users.password"
-        class="control"
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Password"
-      />
-      <div class="color" v-if="enviar && !$v.users.password.required">
-        Campo requirido
-      </div>
-      <div class="color" v-if="enviar && !$v.users.password.minLength">
-        Este campo debe contener al menos 6 caracteres
-      </div>
-      <input
-        v-model="users.confirmpassword"
-        class="control"
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Comfirm Password"
-      />
-      <div class="color" v-if="enviar && !$v.users.confirmpassword.required">
-        Campo requirido
-      </div>
-      <div class="color" v-if="enviar && !$v.users.confirmpassword.minLength">
-        Este campo debe contener al menos 6 caracteres
-      </div>
-      <p>Estoy de acuerdo con los <a href="#">terminos y condiciones</a></p>
-      <button class="boton">Registrarse</button>
-      <p><a href="#">Ya tengo una cuenta?</a></p>
-    </form>
-  </div>
+<template src="./html/Home.html">
 </template>
 
 <script>
@@ -96,12 +27,18 @@ export default {
   },
   methods: {
     boton() {
+      var contra = this.users.password;
+      var Comfirmcontra = this.users.confirmpassword;
       this.enviar = true;
       if (this.$v.$invalid) {
         return console.error("complete los campos requiridos");
       }
-    this.$router.push('/about')
-},
+      if (contra == Comfirmcontra) {
+        this.$router.push("/about");
+      } else {
+        alert("Password incorret");
+      }
+    },
   },
 };
 </script>
