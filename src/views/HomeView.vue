@@ -75,7 +75,7 @@ export default {
   background: #24303c;
   padding: 10px;
   border-radius: 4px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   border: 1px solid #1f53c5;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 18px;
